@@ -1,0 +1,39 @@
+# bugsquash.toml — config for claude-bug-squash (https://github.com/JDDavenport/claude-bug-squash)
+# Safe-by-default: auto-merge is OFF until you flip the env switches (see README).
+
+[repo]
+label = "your-app"
+
+[caps]
+# A fix is eligible for the no-tap autonomous tier ONLY if it stays within these.
+max_files = 3
+max_lines = 40
+auto_severities = ["p2", "p3"]   # p0/p1 always get a human
+
+[deny]
+# Files an autonomous fix may NEVER touch (hard BLOCK → diagnosis only). These
+# EXTEND the built-in safe defaults (auth/secrets/payments/migrations/deploy/...).
+# Set replace_defaults = true to use ONLY your list.
+globs = [
+    # "src/your/critical/**",
+]
+replace_defaults = false
+
+[panel]
+# The adversarial review panel runs before any merge. Disable with enabled = false
+# (or --no-panel) to save tokens — less safe.
+enabled = true
+seats = ["product", "safety", "architecture"]
+model = "opus"
+timeout_s = 240
+
+[fix]
+# How a fix is produced, proven, and branched.
+# repro_command should FAIL (non-zero exit) while the bug is present and PASS once
+# it's fixed — the red→green proof the gate requires for an autonomous merge.
+repro_command = ""
+test_command = "pytest -q"
+branch_prefix = "bugsquash/"
+base = ""              # base branch to fix off; "" = current branch
+fix_model = "opus"
+
