@@ -1,0 +1,29 @@
+{
+  "name": "claude-bug-squash",
+  "owner": {
+    "name": "JD Davenport"
+  },
+  "description": "Single-plugin marketplace for claude-bug-squash: autonomous, gated bug-squashing for any repo.",
+  "plugins": [
+    {
+      "name": "claude-bug-squash",
+      "source": "./",
+      "description": "Autonomous, gated bug-squashing for any repo — triage, fix in an isolated worktree, prove red→green, gate through blast-radius caps + deny-list + a 3-seat adversarial review panel, and merge only behind shadow-mode + a per-day rate limit + an explicit arm switch.",
+      "version": "0.1.0",
+      "author": {
+        "name": "JD Davenport"
+      },
+      "homepage": "https://github.com/JDDavenport/claude-bug-squash",
+      "repository": "https://github.com/JDDavenport/claude-bug-squash",
+      "license": "MIT",
+      "keywords": [
+        "bugfix",
+        "agent",
+        "automation",
+        "ci",
+        "code-review",
+        "safety"
+      ]
+    }
+  ]
+}

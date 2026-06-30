@@ -1,0 +1,19 @@
+{
+  "name": "claude-bug-squash",
+  "version": "0.1.0",
+  "description": "Autonomous, gated bug-squashing for any repo — triage a bug, fix it in an isolated worktree, prove it red→green, then gate the fix through blast-radius caps, a never-touch deny-list, and a 3-seat adversarial review panel. Safe-by-default: proposes + gates but never merges until you arm it.",
+  "author": {
+    "name": "JD Davenport"
+  },
+  "homepage": "https://github.com/JDDavenport/claude-bug-squash",
+  "repository": "https://github.com/JDDavenport/claude-bug-squash",
+  "license": "MIT",
+  "keywords": [
+    "bugfix",
+    "agent",
+    "automation",
+    "ci",
+    "code-review",
+    "safety"
+  ]
+}

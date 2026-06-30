@@ -70,12 +70,18 @@ def _now() -> str:
 
 
 def db_path() -> Path:
-    """Resolve the SQLite path: ``BUGSQUASH_DB`` env, else the config state dir."""
+    """Resolve the SQLite path: ``BUGSQUASH_DB`` env, else the per-repo state dir.
+
+    Uses ``config.load_all()`` so the posture is rooted at the git top-level —
+    i.e. the DB defaults to ``<repo>/.bugsquash/state/tickets.db`` and travels with
+    the repo, instead of a machine-global path that would leak tickets between
+    repos. ``BUGSQUASH_DB`` / ``AUTO_SQUASH_STATE_DIR`` still override.
+    """
     env = os.getenv("BUGSQUASH_DB")
     if env:
         return Path(env)
     from . import config
-    return config.load().state_dir / "tickets.db"
+    return config.load_all().posture.state_dir / "tickets.db"
 
 
 def _connect(path: Optional[Path] = None) -> sqlite3.Connection:
