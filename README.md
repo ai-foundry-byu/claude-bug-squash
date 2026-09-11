@@ -72,30 +72,45 @@ The deny-list, blast-radius caps, panel seats, and repro/test commands all live 
 
 ### (a) As a Claude Code plugin
 
-```
-/plugin marketplace add JDDavenport/claude-bug-squash
-/plugin install claude-bug-squash
+The plugin adds slash commands that drive the `bug-squash` CLI, so install the CLI as well — see (b).
+
+From your terminal (safe to paste whole):
+
+```bash
+claude plugin marketplace add jddavenportOpen/claude-bug-squash && claude plugin install claude-bug-squash@claude-bug-squash
 ```
 
-This gives you slash commands inside Claude Code:
+Or from inside Claude Code, one command at a time. Pasted together, `/plugin marketplace add` reads the second line as part of the repo name and fails.
+
+```
+/plugin marketplace add jddavenportOpen/claude-bug-squash
+```
+
+```
+/plugin install claude-bug-squash@claude-bug-squash
+```
+
+Restart Claude Code (or run `/reload-plugins`). Plugin commands are namespaced, so type them in full:
 
 | Command | Does |
 | --- | --- |
-| `/bug-squash-init` | set up `bugsquash.toml` + reviewer souls for this repo |
-| `/bug-squash-add` | capture a bug ticket |
-| `/bug-squash-run` | triage → fix → gate → panel → act |
-| `/bug-squash-status` | list tickets and their state |
+| `/claude-bug-squash:bug-squash-init` | set up `bugsquash.toml` + reviewer souls for this repo |
+| `/claude-bug-squash:bug-squash-add` | capture a bug ticket |
+| `/claude-bug-squash:bug-squash-run` | triage → fix → gate → panel → act |
+| `/claude-bug-squash:bug-squash-status` | list tickets and their state |
 
 ### (b) As a CLI
 
+It is not on PyPI. Install it straight from GitHub:
+
 ```bash
-pip install claude-bug-squash
+pip install git+https://github.com/jddavenportOpen/claude-bug-squash
 ```
 
 or, from a clone, the bundled installer:
 
 ```bash
-./install.sh
+git clone https://github.com/jddavenportOpen/claude-bug-squash && cd claude-bug-squash && ./install.sh
 ```
 
 Both install the `bug-squash` console command. Python 3.11+ is required; the engine itself has **zero runtime dependencies** (stdlib only).
@@ -300,4 +315,4 @@ A notifier failure is swallowed — a broken webhook never crashes a squash run 
 
 MIT © JD Davenport. See [`LICENSE`](LICENSE).
 
-Issues and PRs: <https://github.com/JDDavenport/claude-bug-squash>. See [`CONTRIBUTING.md`](CONTRIBUTING.md) and [`SECURITY.md`](SECURITY.md).
+Issues and PRs: <https://github.com/jddavenportOpen/claude-bug-squash>. See [`CONTRIBUTING.md`](CONTRIBUTING.md) and [`SECURITY.md`](SECURITY.md).

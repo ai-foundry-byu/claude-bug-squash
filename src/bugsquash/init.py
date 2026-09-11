@@ -25,7 +25,7 @@ from . import config as config_mod
 from . import review_panel
 
 DEFAULT_TOML = """\
-# bugsquash.toml — config for claude-bug-squash (https://github.com/JDDavenport/claude-bug-squash)
+# bugsquash.toml — config for claude-bug-squash (https://github.com/jddavenportOpen/claude-bug-squash)
 # Safe-by-default: auto-merge is OFF until you flip the env switches (see README).
 
 [repo]

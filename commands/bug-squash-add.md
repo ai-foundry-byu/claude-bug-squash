@@ -18,7 +18,7 @@ allowed-tools: Bash(bug-squash:*), Bash(command:*)
 If the pre-flight reported **MISSING**, do NOT proceed. Tell the user the `bug-squash`
 binary is not on their PATH and they must install it first:
 
-- `pip install claude-bug-squash` (recommended), or
+- `pip install git+https://github.com/jddavenportOpen/claude-bug-squash` (recommended), or
 - run the repo's `install.sh` if they cloned the source.
 
 Then stop.
