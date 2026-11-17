@@ -49,7 +49,7 @@ Also worth confirming before arming:
 
 If you find a vulnerability — especially anything that could let a fix bypass the gate, the deny-list, the caps, or the arm switch — please report it **privately** rather than opening a public issue:
 
-- Open a [GitHub security advisory](https://github.com/jddavenportOpen/claude-bug-squash/security/advisories/new) on the repo, **or**
+- Open a [GitHub security advisory](https://github.com/ai-foundry-byu/claude-bug-squash/security/advisories/new) on the repo, **or**
 - Email the maintainer via the contact on the GitHub profile, with `claude-bug-squash security` in the subject.
 
 Please include reproduction steps and the impact. We'll acknowledge, work on a fix, and credit you (if you'd like) once a patch is available. Please give us a reasonable window to address the issue before any public disclosure.

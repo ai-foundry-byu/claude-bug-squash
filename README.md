@@ -77,13 +77,13 @@ The plugin adds slash commands that drive the `bug-squash` CLI, so install the C
 From your terminal (safe to paste whole):
 
 ```bash
-claude plugin marketplace add jddavenportOpen/claude-bug-squash && claude plugin install claude-bug-squash@claude-bug-squash
+claude plugin marketplace add ai-foundry-byu/claude-bug-squash && claude plugin install claude-bug-squash@claude-bug-squash
 ```
 
 Or from inside Claude Code, one command at a time. Pasted together, `/plugin marketplace add` reads the second line as part of the repo name and fails.
 
 ```
-/plugin marketplace add jddavenportOpen/claude-bug-squash
+/plugin marketplace add ai-foundry-byu/claude-bug-squash
 ```
 
 ```
@@ -104,13 +104,13 @@ Restart Claude Code (or run `/reload-plugins`). Plugin commands are namespaced, 
 It is not on PyPI. Install it straight from GitHub:
 
 ```bash
-pip install git+https://github.com/jddavenportOpen/claude-bug-squash
+pip install git+https://github.com/ai-foundry-byu/claude-bug-squash
 ```
 
 or, from a clone, the bundled installer:
 
 ```bash
-git clone https://github.com/jddavenportOpen/claude-bug-squash && cd claude-bug-squash && ./install.sh
+git clone https://github.com/ai-foundry-byu/claude-bug-squash && cd claude-bug-squash && ./install.sh
 ```
 
 Both install the `bug-squash` console command. Python 3.11+ is required; the engine itself has **zero runtime dependencies** (stdlib only).
@@ -315,4 +315,4 @@ A notifier failure is swallowed — a broken webhook never crashes a squash run 
 
 MIT © JD Davenport. See [`LICENSE`](LICENSE).
 
-Issues and PRs: <https://github.com/jddavenportOpen/claude-bug-squash>. See [`CONTRIBUTING.md`](CONTRIBUTING.md) and [`SECURITY.md`](SECURITY.md).
+Issues and PRs: <https://github.com/ai-foundry-byu/claude-bug-squash>. See [`CONTRIBUTING.md`](CONTRIBUTING.md) and [`SECURITY.md`](SECURITY.md).

@@ -1,4 +1,4 @@
-# bugsquash.toml — config for claude-bug-squash (https://github.com/jddavenportOpen/claude-bug-squash)
+# bugsquash.toml — config for claude-bug-squash (https://github.com/ai-foundry-byu/claude-bug-squash)
 # Safe-by-default: auto-merge is OFF until you flip the env switches (see README).
 
 [repo]
